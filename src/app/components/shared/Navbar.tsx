@@ -8,7 +8,7 @@ const Navbar = () => {
   //   console.log(date);
 
   return (
-    <div className="">
+    <div className="container mx-auto">
       <div className="flex mt-5 justify-between">
         <div className="flex items-center gap-4">
           <Image

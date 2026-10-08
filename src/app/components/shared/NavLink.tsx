@@ -12,14 +12,16 @@ const NavLink = async () => {
   //   console.log(data);
 
   return (
-    <div>
-      <div className="flex mt-6 gap-8 ml-6">
-        {data.map((d) => (
-          <div key={d.id} className="flex gap-1">
-            <div>{d.icon}</div>
-            <div>{d.nameBn}</div>
-          </div>
-        ))}
+    <div className="border border-base-300 py-4 mt-6">
+      <div className="container mx-auto">
+        <div className="flex gap-8 ml-6">
+          {data.map((d) => (
+            <div key={d.id} className="flex gap-1">
+              <span>{d.icon}</span>
+              <span>{d.nameBn}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
