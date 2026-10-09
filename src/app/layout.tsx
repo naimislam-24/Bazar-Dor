@@ -3,6 +3,7 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/shared/Navbar";
 import Marquee from "./components/shared/Marquee";
+import Footer from "./components/shared/Footer";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali", "latin"],
@@ -23,10 +24,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="light"
       className={`${hindSiliguri.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#F0F5F0]">
         <Navbar />
         <Marquee />
         {children}
+        <Footer />
       </body>
     </html>
   );

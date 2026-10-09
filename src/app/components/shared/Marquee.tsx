@@ -25,7 +25,7 @@ const Marquee = async () => {
   //   console.log(changeData);
 
   return (
-    <div>
+    <div className="bg-white">
       <MarqueeText direction="right" duration={30}>
         <div className="flex gap-10">
           {sortedData.map((d) => (

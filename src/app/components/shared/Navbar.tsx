@@ -8,37 +8,39 @@ const Navbar = () => {
   //   console.log(date);
 
   return (
-    <div className="container mx-auto">
-      <div className="flex mt-5 justify-between">
-        <div className="flex items-center gap-4">
-          <Link href="/">
-            <Image
-              src={Logo}
-              width={30}
-              height={30}
-              alt="Logo"
-              className="w-12 h-12 p-2 bg-green-600 rounded-2xl"
-            />
-          </Link>
-          <div className="">
-            <h1>বাজার দর</h1>
-            <p>{date}</p>
+    <div className="bg-white">
+      <div className="container mx-auto">
+        <div className="flex mt-5 justify-between">
+          <div className="flex items-center gap-4">
+            <Link href="/">
+              <Image
+                src={Logo}
+                width={30}
+                height={30}
+                alt="Logo"
+                className="w-12 h-12 p-2 bg-green-600 rounded-2xl"
+              />
+            </Link>
+            <div className="">
+              <h1 className="font-bold text-2xl">বাজার দর</h1>
+              <p>{date}</p>
+            </div>
+          </div>
+          <div className=" flex gap-4">
+            <Link href="/sign-in">
+              <button className="btn btn-outline border border-none">
+                সাইন ইন
+              </button>
+            </Link>
+            <Link href="/sign-up">
+              <button className="btn btn-warning bg-green-600 border-none text-white">
+                সাইন আপ
+              </button>
+            </Link>
           </div>
         </div>
-        <div className=" flex gap-4">
-          <Link href="/sign-in">
-            <button className="btn btn-outline border border-none">
-              সাইন ইন
-            </button>
-          </Link>
-          <Link href="/sign-up">
-            <button className="btn btn-warning bg-green-600 border-none text-white">
-              সাইন আপ
-            </button>
-          </Link>
-        </div>
+        <NavLink />
       </div>
-      <NavLink />
     </div>
   );
 };
