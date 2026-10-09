@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 interface INavLink {
   id: string;
   icon: string;
   nameBn: string;
+  slug: string;
 }
 
 const NavLink = async () => {
@@ -16,10 +19,12 @@ const NavLink = async () => {
       <div className="container mx-auto">
         <div className="flex gap-8 ml-6">
           {data.map((d) => (
-            <div key={d.id} className="flex gap-1">
-              <span>{d.icon}</span>
-              <span>{d.nameBn}</span>
-            </div>
+            <Link href={`/category/${d.slug}`} key={d.id}>
+              <div className="flex gap-1">
+                <span>{d.icon}</span>
+                <span>{d.nameBn}</span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
