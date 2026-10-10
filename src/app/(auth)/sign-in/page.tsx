@@ -9,6 +9,7 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,8 +23,14 @@ const SignIn = () => {
       password: data.password as string,
       callbackURL: "/",
     });
+    // console.log(resData, error);
+    if (resData) {
+      toast.success("সফলভাবে সাইন ইন হয়েছে।");
+    }
 
-    console.log(resData, error);
+    if (error) {
+      toast.error(error.message);
+    }
   };
 
   const handleGoogle = async () => {

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
-// import Navbar from "./components/shared/Navbar";
+import Navbar from "./components/shared/Navbar";
 import Marquee from "./components/shared/Marquee";
 import Footer from "./components/shared/Footer";
+import { ToastContainer } from "react-toastify";
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ["bengali", "latin"],
@@ -25,10 +26,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${hindSiliguri.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#F0F5F0]">
-        {/* <Navbar /> */}
+        <Navbar />
         <Marquee />
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import Logo from "@/app/assets/logo-icon.png";
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import UserInfo from "./UserInfo";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
@@ -28,18 +29,9 @@ const Navbar = () => {
               <p>{date}</p>
             </div>
           </div>
-          <div className=" flex gap-4">
-            <Link href="/sign-in">
-              <button className="btn btn-outline border border-none">
-                সাইন ইন
-              </button>
-            </Link>
-            <Link href="/sign-up">
-              <button className="btn btn-warning bg-green-600 border-none text-white">
-                সাইন আপ
-              </button>
-            </Link>
-          </div>
+          {/* ****************************************************** */}
+          <UserInfo />
+          {/* ******************************************************** */}
         </div>
         <NavLink />
       </div>

@@ -26,7 +26,8 @@ const formatPrice = (price: number) => `${price.toLocaleString("bn-BD")} টা�
 const Details = async ({ params }: { params: { detailsId: string } }) => {
   const { detailsId } = await params;
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products/${detailsId}`,
+    // `https://api.api-store.workers.dev/api/bazardor/products/${detailsId}`,
+    `https://api.abcz.workers.dev/api/bazardor/products/${detailsId}`,
   );
   const data: IProduct = await res.json();
   // console.log(data);
