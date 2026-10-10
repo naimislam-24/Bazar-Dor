@@ -22,7 +22,9 @@ const Navbar = () => {
               />
             </Link>
             <div className="">
-              <h1 className="font-bold text-2xl">বাজার দর</h1>
+              <Link href="/">
+                <h1 className="font-bold text-2xl">বাজার দর</h1>
+              </Link>
               <p>{date}</p>
             </div>
           </div>
