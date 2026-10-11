@@ -49,17 +49,16 @@ const SignIn = () => {
 
   return (
     <div>
-      <div className="flex min-h-screen flex-col items-center bg-[#f1f6f1] px-4 py-10 sm:py-16">
-        <div className="mb-6 text-center">
-          <h1 className="text-2xl font-bold tracking-tight text-gray-800">
+      <div className="flex min-h-screen w-full flex-col items-center bg-[#f1f6f1] px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+        <div className="mb-6 w-full max-w-md text-center sm:mb-8">
+          <h1 className="text-2xl font-bold tracking-tight text-gray-800 sm:text-3xl">
             সাইন ইন
           </h1>
-          <p className="mt-2 text-sm text-gray-500">
-            বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
+          <p className="mt-2 text-sm leading-6 text-gray-500 sm:text-base">
+            বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।{" "}
           </p>
         </div>
-
-        <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm sm:p-8">
+        <div className="w-full max-w-md rounded-2xl border border-gray-200 bg-white/80 p-4 shadow-sm sm:p-6 md:p-8">
           <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
             <TextField
               isRequired
@@ -81,7 +80,6 @@ const SignIn = () => {
               />
               <FieldError className="mt-1 text-xs text-red-600" />
             </TextField>
-
             <TextField
               isRequired
               minLength={8}
@@ -107,32 +105,21 @@ const SignIn = () => {
                 placeholder="Enter your password"
                 className="w-full rounded-lg border border-gray-200 bg-transparent px-3 py-2.5 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-green-600 focus:ring-2 focus:ring-green-100"
               />
-
               <FieldError className="mt-1 text-xs text-red-600" />
             </TextField>
-
-            <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-2 flex w-full flex-col gap-3 sm:flex-row">
               <Button
                 type="submit"
                 className="w-full rounded-lg bg-green-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               >
                 অ্যাকাউন্ট তৈরি করুন
               </Button>
-
-              {/* <Button
-                    type="reset"
-                    variant="secondary"
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
-                  >
-                    Reset
-                  </Button> */}
             </div>
           </Form>
-
-          <div className="mt-6 flex w-full flex-col gap-2 sm:flex-row sm:items-center">
+          <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-2">
             <button
               onClick={handleGoogle}
-              className="btn h-9 min-h-9 w-full flex-1 gap-1.5 rounded-lg border border-[#e5e5e5] bg-white px-2.5 text-[14px] font-medium text-black shadow-none hover:border-[#d4d4d4] hover:bg-gray-50"
+              className="btn h-10 min-h-10 w-full min-w-0 flex-1 gap-2 rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm font-medium text-black shadow-none transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
             >
               <svg
                 aria-label="Google logo"
@@ -163,10 +150,9 @@ const SignIn = () => {
               </svg>
               Login with Google
             </button>
-
             <button
               onClick={handleGithub}
-              className="btn h-9 min-h-9 w-full flex-1 gap-1.5 rounded-lg border border-[#e5e5e5] bg-white px-2.5 text-[14px] font-medium text-black shadow-none hover:border-[#d4d4d4] hover:bg-gray-50"
+              className="btn h-10 min-h-10 w-full min-w-0 flex-1 gap-2 rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm font-medium text-black shadow-none transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
             >
               <svg
                 aria-label="GitHub logo"
@@ -177,27 +163,27 @@ const SignIn = () => {
               >
                 <path
                   fill="currentColor"
-                  d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10 10 0 0,0 12,2Z"
+                  d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10 10 0 0 0 12,2Z"
                 ></path>
               </svg>
               Login with GitHub
             </button>
           </div>
-          <p className="mt-6 text-center text-[15px] text-base-content/70">
+          <p className="mt-6 text-center text-sm leading-6 text-gray-500 sm:text-[15px]">
             অ্যাকাউন্ট আছে?
-            <Link href="/sign-up">
-              <button
-                type="submit"
-                className="cursor-pointer font-semibold text-green-600 underline decoration-transparent underline-offset-4 transition-all duration-200 hover:text-green-700 hover:decoration-green-600"
-              >
-                সাইন আপ করুন
-              </button>
+            <Link
+              href="/sign-up"
+              className="inline-block cursor-pointer font-semibold text-green-600 underline decoration-transparent underline-offset-4 transition-all duration-200 hover:text-green-700 hover:decoration-green-600"
+            >
+              সাইন আপ করুন
             </Link>
           </p>
         </div>
-
-        <Link href="/">
-          <p className="mt-6 text-[15px] text-gray-500">← হোম পেজে ফিরে যান</p>
+        <Link
+          href="/"
+          className="mt-6 cursor-pointer text-center text-sm text-gray-500 transition-colors duration-200 hover:text-green-700 sm:text-[15px]"
+        >
+          ← হোম পেজে ফিরে যান
         </Link>
       </div>
     </div>

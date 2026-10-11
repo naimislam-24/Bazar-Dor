@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavLinkMenu from "./NavLinkMenu";
 
 interface INavLink {
   id: string;
@@ -9,28 +9,16 @@ interface INavLink {
 
 const NavLink = async () => {
   const res = await fetch(
-    // "https://api.api-store.workers.dev/api/bazardor/categories",
-    "https://api.abcz.workers.dev/api/bazardor/categories",
+    "https://openapi.programming-hero.com/api/bazardor/categories",
   );
-  const data: INavLink[] = await res.json();
-  //   console.log(data);
 
-  return (
-    <div className="border-y w-full border-base-300 py-4 mt-6">
-      <div className="container mx-auto">
-        <div className="flex gap-8 ml-6">
-          {data.map((d) => (
-            <Link href={`/category/${d.slug}`} key={d.id}>
-              <div className="flex gap-1">
-                <span>{d.icon}</span>
-                <span>{d.nameBn}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  if (!res.ok) {
+    throw new Error("ক্যাটাগরির তথ্য লোড করা যায়নি।");
+  }
+
+  const data: INavLink[] = await res.json();
+
+  return <NavLinkMenu data={data} />;
 };
 
 export default NavLink;

@@ -14,7 +14,8 @@ interface INavIncress {
 const NavDecressCard = async () => {
   const res = await fetch(
     // "https://api.api-store.workers.dev/api/bazardor/products",
-    "https://api.abcz.workers.dev/api/bazardor/products",
+    // "https://api.abcz.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
   );
   const data = await res.json();
   // console.log(data.filter((item) => item.change.dir == "up"));
@@ -26,37 +27,46 @@ const NavDecressCard = async () => {
     .slice(0, 6);
 
   return (
-    <div className="container mx-auto mt-15">
-      <div className="flex gap-1">
-        <span className="text-green-600 text-2xl">▼</span>
-        <h2 className="text-2xl font-bold">আজ দাম কমেছে</h2>
+    <div className="container mx-auto mt-8 w-full px-3 sm:mt-10 sm:px-4 lg:px-6">
+      <div className="flex items-center gap-2">
+        <span className="text-xl text-green-600 sm:text-2xl">▼</span>
+        <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+          আজ দাম কমেছে
+        </h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-5">
+      <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {filterData.map((d, ind) => (
           <Link href={`/details/${d.id}`} key={d.id}>
             <div key={ind}>
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="h-full rounded-2xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-green-200 hover:shadow-md sm:p-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-3xl">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-2xl sm:h-14 sm:w-14 sm:text-3xl">
                     {d.image}
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="truncate text-lg font-semibold leading-tight text-gray-900">
+
+                  <div className="min-w-0 flex-1">
+                    <h3 className="truncate text-base font-semibold leading-tight text-gray-900 sm:text-lg">
                       {d.nameBn}
                     </h3>
-                    <p className="text-sm text-gray-500">প্রতি কেজি</p>
+                    <p className="mt-1 text-xs text-gray-500 sm:text-sm">
+                      প্রতি কেজি
+                    </p>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <p className="text-xs text-gray-600">আজকের দাম</p>
-                  <div className="mt-1 flex items-center justify-between">
-                    <p className="text-2xl font-bold text-gray-900">
+                  <p className="text-xs text-gray-600 sm:text-sm">আজকের দাম</p>
+
+                  <div className="mt-1 flex items-center justify-between gap-2">
+                    <p className="min-w-0 text-xl font-bold text-gray-900 sm:text-2xl">
                       {d.today}
-                      <span className="text-lg font-medium">টাকা</span>
+                      <span className="ml-1 text-base font-medium sm:text-lg">
+                        টাকা
+                      </span>
                     </p>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gray-100 text-green-600 text-sm font-medium">
+
+                    <div className="inline-flex shrink-0 items-center gap-1 rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-green-600 sm:gap-1.5 sm:px-3 sm:text-sm">
                       <span className="text-xs">▼</span>
                       <span>{d.change.pct}%</span>
                     </div>
