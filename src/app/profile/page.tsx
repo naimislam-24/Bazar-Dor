@@ -1,6 +1,8 @@
 "use client";
 import { signOut, updateUser, useSession } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -17,6 +19,8 @@ const Profile = () => {
     });
     console.log(resData, error);
   };
+
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -45,7 +49,16 @@ const Profile = () => {
             </div>
             <Link href="/sign-in">
               <button
-                onClick={() => signOut()}
+                // onClick={() => signOut()}
+                onClick={async () => {
+                  try {
+                    await signOut();
+                    setIsOpen(false);
+                    toast.success("সফলভাবে লগ আউট হয়েছে!");
+                  } catch {
+                    toast.error("লগ আউট করতে সমস্যা হয়েছে!");
+                  }
+                }}
                 type="button"
                 className="inline-flex items-center gap-2 rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-200"
               >
