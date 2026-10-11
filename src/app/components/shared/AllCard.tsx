@@ -30,7 +30,10 @@ const AllCard = async () => {
   //   .sort((a, b) => b.change.pct - a.change.pct);
 
   return (
-    <div className="container mx-auto mt-8 w-full px-3 sm:mt-10 sm:px-4 lg:px-6">
+    <div
+      id="all-products"
+      className="container mx-auto mt-8 w-full scroll-mt-6 px-3 sm:mt-10 sm:px-4 lg:px-6"
+    >
       <div>
         <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">সব পণ্য</h2>
         <h4 className="mt-2 text-sm text-gray-500 sm:mt-3 sm:text-base">
