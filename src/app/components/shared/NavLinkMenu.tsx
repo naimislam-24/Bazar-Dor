@@ -15,7 +15,7 @@ const NavLinkMenu = ({ data }: { data: INavLink[] }) => {
 
   return (
     <nav className="mt-4 border-y border-base-300 py-3 sm:mt-6 sm:py-4">
-      <div className="flex items-center justify-between md:hidden">
+      <div className="flex items-center justify-between px-3 sm:px-4 lg:px-6 md:hidden">
         <span className="text-sm font-semibold text-gray-700">
           ক্যাটাগরি মেনু
         </span>
@@ -64,7 +64,7 @@ const NavLinkMenu = ({ data }: { data: INavLink[] }) => {
       </div>
 
       {/* Desktop Category Menu */}
-      <div className="hidden flex-wrap items-center gap-x-8 gap-y-3 md:flex">
+      <div className="hidden flex-wrap items-center gap-x-8 gap-y-3 px-3 sm:px-4 lg:px-6 md:flex">
         {data.map((d) => (
           <Link
             href={`/category/${d.slug}`}

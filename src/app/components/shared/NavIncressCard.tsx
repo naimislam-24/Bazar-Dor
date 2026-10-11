@@ -27,7 +27,7 @@ const NavIncressCard = async () => {
     .slice(0, 6);
 
   return (
-    <div className="container mx-auto mt-8 w-full sm:mt-10">
+    <div className="container mx-auto mt-8 w-full px-3 sm:mt-10 sm:px-4 lg:px-6">
       <div className="flex items-center gap-2">
         <span className="text-xl text-red-600 sm:text-2xl">▲</span>
         <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">

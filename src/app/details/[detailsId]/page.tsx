@@ -58,7 +58,7 @@ const Details = async ({ params }: { params: { detailsId: string } }) => {
     <div>
       <main className="min-h-screen bg-[#f0f5f0] px-3 py-6 sm:px-5 lg:px-8">
         <div className="container mx-auto">
-          <div className="mt-5 flex flex-wrap items-center gap-2 text-[18px] text-gray-500">
+          <div className="mt-5 flex flex-wrap items-center gap-2 px-3 text-[18px] text-gray-500 sm:px-4 lg:px-6">
             <span>হোম</span> <span>›</span> <span>{data.categoryNameBn}</span>
             <span>›</span>
             <span className="text-gray-800">{data.nameBn}</span>

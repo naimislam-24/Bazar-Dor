@@ -7,7 +7,7 @@ const Banner = () => {
 
   return (
     <div>
-      <div className="container mx-auto mt-10">
+      <div className="container mx-auto mt-10 w-full px-3 sm:px-4 lg:px-6">
         <section className="relative overflow-hidden rounded-3xl border border-base-300 bg-linear-to-br from-base-100 via-base-100 to-green-50 px-5 py-7 shadow-sm sm:px-8 sm:py-9 lg:px-10 lg:py-10">
           <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-green-100/50 blur-3xl" />
           <div className="absolute -bottom-20 left-1/3 h-40 w-40 rounded-full bg-emerald-100/40 blur-3xl" />

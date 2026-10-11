@@ -1,7 +1,6 @@
 "use client";
 import { signOut, updateUser, useSession } from "@/lib/auth-client";
 import Link from "next/link";
-import { useState } from "react";
 import { toast } from "react-toastify";
 
 const Profile = () => {
@@ -19,8 +18,6 @@ const Profile = () => {
     });
     console.log(resData, error);
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -53,7 +50,6 @@ const Profile = () => {
                 onClick={async () => {
                   try {
                     await signOut();
-                    setIsOpen(false);
                     toast.success("সফলভাবে লগ আউট হয়েছে!");
                   } catch {
                     toast.error("লগ আউট করতে সমস্যা হয়েছে!");

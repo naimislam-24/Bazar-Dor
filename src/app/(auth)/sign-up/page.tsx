@@ -150,6 +150,7 @@ const SignUp = () => {
 
         <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:gap-2">
           <button
+            type="button"
             onClick={handleGoogle}
             className="btn h-10 min-h-10 w-full min-w-0 flex-1 gap-2 rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm font-medium text-black shadow-none transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
           >
@@ -184,6 +185,7 @@ const SignUp = () => {
           </button>
 
           <button
+            type="button"
             onClick={handleGithub}
             className="btn h-10 min-h-10 w-full min-w-0 flex-1 gap-2 rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm font-medium text-black shadow-none transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500"
           >
