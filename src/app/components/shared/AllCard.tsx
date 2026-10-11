@@ -32,7 +32,7 @@ const AllCard = async () => {
   return (
     <div
       id="all-products"
-      className="container mx-auto mt-8 w-full scroll-mt-6 px-3 sm:mt-10 sm:px-4 lg:px-6"
+      className="container mx-auto mt-8 w-full scroll-mt-6 sm:mt-10"
     >
       <div>
         <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">সব পণ্য</h2>

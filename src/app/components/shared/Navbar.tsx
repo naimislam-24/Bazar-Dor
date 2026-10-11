@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto px-3 sm:px-5">
+      <div className="container mx-auto w-full">
         <div className="mt-4 flex items-center justify-between gap-2 sm:mt-5">
           <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <Link href="/" className="shrink-0">
