@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Marquee />
         {children}
         <Footer />
-        <ToastContainer />
+        <ToastContainer position="top-center" />
       </body>
     </html>
   );
